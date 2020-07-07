@@ -1,0 +1,11 @@
+
+FROM openjdk:8-jdk-alpine
+
+ARG JAR_FILE=target/football-league.jar
+
+WORKDIR /opt/app
+
+COPY ${JAR_FILE} football-league.jar
+EXPOSE 8085
+  # java -jar /opt/app/football-league.jar
+ENTRYPOINT ["java","-jar","football-league.jar"]
